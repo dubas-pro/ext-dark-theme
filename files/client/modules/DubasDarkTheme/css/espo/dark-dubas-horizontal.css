@@ -187,6 +187,11 @@ input[type=search] {
     box-sizing: content-box
 }
 
+input.form-control.global-search-input {
+    background-color: #0e1621;
+}
+
+
 input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-decoration {
     -webkit-appearance: none
@@ -20043,7 +20048,7 @@ table.table td.cell .complex-text {
 .popup-notification {
     width: 400px;
     padding: 14px;
-    background-color: #fff;
+    background-color: #111b28;
     border: 2px solid #e8eced;
     margin-top: 10px;
     margin-right: 5px
@@ -21092,7 +21097,7 @@ body>footer>p a:visited {
 }
 
 .btn-text {
-    color: #333;
+    color: #dfdfdf;
     border-radius: 0;
     font-weight: 400
 }
@@ -21122,7 +21127,7 @@ fieldset[disabled] .btn-text {
 
 .btn-text:focus,
 .btn-text:hover {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     background-color: transparent
 }
@@ -21131,7 +21136,7 @@ fieldset[disabled] .btn-text {
 .btn-text:focus .fas,
 .btn-text:hover .far,
 .btn-text:hover .fas {
-    color: #333
+    color: #fff
 }
 
 .btn-text.disabled,
@@ -21379,6 +21384,10 @@ fieldset[disabled] .btn-text .fas {
 }
 .fc-unthemed td.fc-today {
     background: #1d2e45 !important;
+}
+
+.fc-unthemed .fc-divider, .fc-unthemed .fc-popover .fc-header, .fc-unthemed .fc-list-heading td {
+    background: #172436 !important;
 }
 
 body {
