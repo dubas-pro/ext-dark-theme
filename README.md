@@ -7,7 +7,7 @@ This repo is for comments only, but we do not give any warranty for the theme or
 ## Requirements
 EspoCRM in version higher than 6.0.0.
 
-EspoCRM devs change many things in 6.0.0 version, that's why theme is not compatible. 
+EspoCRM devs change many things in 6.0.0 version, that's why theme is not compatible with previous versions. 
 
 ## Getting started
 1. Open our website [https://devcrm.it/dark-theme](https://devcrm.it/dark-theme) and download installer;
