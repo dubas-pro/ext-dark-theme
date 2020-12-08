@@ -3130,7 +3130,7 @@ table th[class*=col-] {
 .table>thead>tr.active>th,
 .table>thead>tr>td.active,
 .table>thead>tr>th.active {
-    background-color: #e8eced
+    background-color: #172436
 }
 
 .table-hover>tbody>tr.active:hover>td,
@@ -3138,7 +3138,7 @@ table th[class*=col-] {
 .table-hover>tbody>tr:hover>.active,
 .table-hover>tbody>tr>td.active:hover,
 .table-hover>tbody>tr>th.active:hover {
-    background-color: #dae0e2
+    background-color: #172436
 }
 
 .table>tbody>tr.success>td,

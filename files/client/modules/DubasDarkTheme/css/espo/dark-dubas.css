@@ -3125,7 +3125,7 @@ table th[class*=col-] {
 .table>thead>tr.active>th,
 .table>thead>tr>td.active,
 .table>thead>tr>th.active {
-    background-color: #e8eced
+    background-color: #172436
 }
 
 .table-hover>tbody>tr.active:hover>td,
@@ -3133,7 +3133,7 @@ table th[class*=col-] {
 .table-hover>tbody>tr:hover>.active,
 .table-hover>tbody>tr>td.active:hover,
 .table-hover>tbody>tr>th.active:hover {
-    background-color: #dae0e2
+    background-color: #172436
 }
 
 .table>tbody>tr.success>td,
@@ -3148,7 +3148,7 @@ table th[class*=col-] {
 .table>thead>tr.success>th,
 .table>thead>tr>td.success,
 .table>thead>tr>th.success {
-    background-color: #d6e8cc
+    background-color: #172436
 }
 
 .table-hover>tbody>tr.success:hover>td,
@@ -3156,7 +3156,7 @@ table th[class*=col-] {
 .table-hover>tbody>tr:hover>.success,
 .table-hover>tbody>tr>td.success:hover,
 .table-hover>tbody>tr>th.success:hover {
-    background-color: #c8e0ba
+    background-color: #172436
 }
 
 .table>tbody>tr.info>td,
@@ -8823,7 +8823,7 @@ button.close {
 }
 
 .note-editor.note-frame .note-editing-area .note-editable {
-    background-color: transparent;
+    background-color: #fff;
     color: #000;
     padding: 10px;
     overflow: auto
