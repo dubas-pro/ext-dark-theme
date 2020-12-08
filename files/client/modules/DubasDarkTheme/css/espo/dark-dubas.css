@@ -22019,6 +22019,21 @@ tr.list-row:hover {
     background-color: #1d2e45;
 }
 
+::-webkit-scrollbar {
+width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #0e1621; 
+}
+
+::-webkit-scrollbar-thumb {
+background: #172436; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
 
 body {
     --theme-name: DubasDark
