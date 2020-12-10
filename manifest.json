@@ -5,7 +5,7 @@
     "acceptableVersions": [
         ">=6.0.0"
     ],
-    "version": "0.0.6",
+    "version": "0.0.7",
     "skipBackup": true,
-    "releaseDate": "2020-12-07"
+    "releaseDate": "2020-12-10"
 }
