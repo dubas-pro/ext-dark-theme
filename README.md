@@ -16,6 +16,9 @@ EspoCRM devs change many things in 6.0.0 version, that's why theme is not compat
 4. Choose installer from you computer and start installation process;
 5. Choose new theme in your user preferences.
 
+## Updates
+If you're already using our theme and you want to update to the newest version, you just need to download new version from [our website](https://devcrm.it/dark-theme) and install in same way as you installed our extension before. You don't have to remove previous version. Installation of the newer version will update Dark theme.
+
 ## Support
 This theme is shared without any support. Theme is available as it is.
 If you want to order some service, all information about us you can find on our website [https://devcrm.it/](https://devcrm.it/).
