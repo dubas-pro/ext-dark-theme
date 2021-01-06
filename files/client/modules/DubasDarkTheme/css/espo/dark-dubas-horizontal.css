@@ -3989,7 +3989,7 @@ fieldset[disabled] a.btn {
 .btn-default:focus {
     color: #fff;
     background-color: #172436;
-    border-color: #172436
+    border-color: #172436;
 }
 
 .btn-default:hover {
@@ -17936,11 +17936,11 @@ th {
 }
 
 .table tr.accented {
-    background-color: #f9f9f9
+    background-color: #172436
 }
 
 .table td.accented {
-    background-color: #f9f9f9
+    background-color: #172436
 }
 
 .form-group.hidden-cell {
