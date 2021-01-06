@@ -1704,25 +1704,25 @@ mark {
 }
 
 .text-primary {
-    color: #5184b0
+    color: #007bff
 }
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #406a8e
+    color: #415e77
 }
 
 .text-success {
-    color: #509831
+    color: #4cca6c
 }
 
 a.text-success:focus,
 a.text-success:hover {
-    color: #3c7124
+    color: #3c612c
 }
 
 .text-info {
-    color: #83779c
+    color: #17a2b8
 }
 
 a.text-info:focus,
@@ -1731,7 +1731,7 @@ a.text-info:hover {
 }
 
 .text-warning {
-    color: #9e7328
+    color: #ffc107
 }
 
 a.text-warning:focus,
@@ -1740,7 +1740,7 @@ a.text-warning:hover {
 }
 
 .text-danger {
-    color: #ad4846
+    color: #f55
 }
 
 a.text-danger:focus,
@@ -6139,43 +6139,43 @@ a.label:hover {
 }
 
 .label-primary {
-    background-color: #5184b0
+    background-color: #007bff
 }
 
 .label-primary[href]:focus,
 .label-primary[href]:hover {
-    background-color: #406a8e
+    background-color: #415e77
 }
 
 .label-success {
-    background-color: #87c956
+    background-color: #4cca6c
 }
 
 .label-success[href]:focus,
 .label-success[href]:hover {
-    background-color: #6db339
+    background-color: #6c9d46
 }
 
 .label-info {
-    background-color: #a595c9
+    background-color: #17a2b8
 }
 
 .label-info[href]:focus,
 .label-info[href]:hover {
-    background-color: #8873b8
+    background-color: #8c88b9
 }
 
 .label-warning {
-    background-color: #ef990e
+    background-color: #ffc107
 }
 
 .label-warning[href]:focus,
 .label-warning[href]:hover {
-    background-color: #bf7a0b
+    background-color: #c9871b
 }
 
 .label-danger {
-    background-color: #cf605d
+    background-color: #f55
 }
 
 .label-danger[href]:focus,
