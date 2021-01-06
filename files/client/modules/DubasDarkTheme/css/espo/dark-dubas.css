@@ -22043,6 +22043,10 @@ background: #555;
     color: #ccc !important;
 }
 
+.cell.col-sm-12.form-group {
+    background-color: #fff;
+}
+
 body {
     --theme-name: DubasDark
 }
