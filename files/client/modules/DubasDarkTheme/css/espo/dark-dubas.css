@@ -17820,7 +17820,7 @@ pre>code {
 }
 
 hr {
-    border-top: 1px solid #dcdcdc
+    border-top: 1px solid #172436
 }
 
 blockquote {
@@ -22033,6 +22033,14 @@ background: #172436;
 
 ::-webkit-scrollbar-thumb:hover {
 background: #555; 
+}
+
+.flotr-grid-label.flotr-grid-label-y {
+    color: #ccc !important;
+}
+
+.flotr-grid-label.flotr-grid-label-x {
+    color: #ccc !important;
 }
 
 body {
