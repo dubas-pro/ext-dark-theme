@@ -5087,15 +5087,15 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
-    background-color: #eee;
-    border-color: #5184b0
+    background-color: #5c6bc0;
+    border-color: #5c6bc0
 }
 
 .nav .nav-divider {
     height: 1px;
     margin: 8.5px 0;
     overflow: hidden;
-    background-color: #e5e5e5
+    background-color: #ccc
 }
 
 .nav>li>a>img {
