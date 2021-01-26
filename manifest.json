@@ -3,10 +3,10 @@
     "description": "More modern theme adjusted by dubas.pro. Paid support available through email contact@devcrm.it",
     "author": "DUBAS - contact@dubas.pro",
     "acceptableVersions": [
-        ">=6.0.0"
+        ">=6.1.0"
     ],
-    "version": "0.0.10",
+    "version": "0.0.11",
     "skipBackup": true,
     "checkVersionUrl": "https://devcrm.it",
-    "releaseDate": "2020-12-20"
+    "releaseDate": "2021-01-26"
 }

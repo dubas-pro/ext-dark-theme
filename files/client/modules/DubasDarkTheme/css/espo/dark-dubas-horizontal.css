@@ -17031,12 +17031,18 @@ li.ui-timepicker-selected .ui-timepicker-duration {
     display: inline
 }
 
-#navbar .navbar ul.tabs>li.more>ul {
+#navbar .navbar ul.tabs>li.more>ul,
+#navbar .navbar ul.tabs>li.more>ul>li>ul,
+#navbar .navbar ul.tabs>li.tab-group>ul,
+#navbar .navbar ul.tabs>li.tab-group>ul>li>ul {
     padding-top: 0;
     padding-bottom: 0
 }
 
-#navbar .navbar ul.tabs>li.more>ul>li>a {
+#navbar .navbar ul.tabs>li.more>ul>li>a,
+#navbar .navbar ul.tabs>li.more>ul>li>ul>li>a,
+#navbar .navbar ul.tabs>li.tab-group>ul>li>a,
+#navbar .navbar ul.tabs>li.tab-group>ul>li>ul>li>a {
     padding-top: 9px;
     padding-bottom: 9px;
     height: 37px
@@ -17053,6 +17059,10 @@ li.ui-timepicker-selected .ui-timepicker-duration {
 
 #navbar .navbar ul.tabs>li span.short-label>span.short-label-text {
     display: none
+}
+
+#navbar .navbar ul.tabs li.tab-group .group-caret {
+    position: absolute
 }
 
 #navbar .navbar .navbar-right>li>a {
@@ -17138,6 +17148,32 @@ li.ui-timepicker-selected .ui-timepicker-duration {
         border-left-style: solid;
         border-color: transparent;
         padding-left: 15px
+    }
+
+    #navbar .navbar .nav>li.more>.dropdown-menu>li.tab-group>ul.dropdown-menu,
+    #navbar .navbar .nav>li.tab-group>.dropdown-menu {
+        overflow-y: hidden
+    }
+
+    #navbar .navbar .nav>li.more>.dropdown-menu>li.tab-group>ul.dropdown-menu {
+        position: fixed
+    }
+
+    #navbar .navbar .nav li.tab-group span.full-label {
+        padding-right: 8px
+    }
+
+    #navbar .navbar ul.nav>li.tab-group>a>span.full-label {
+        padding-right: 10px
+    }
+
+    #navbar .navbar ul.nav>li.tab-group>a>span.group-caret {
+        top: 17px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg)
     }
 }
 
