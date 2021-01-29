@@ -399,3 +399,7 @@
 .auth img.logo {
   width: 170px;
 }
+
+.auth-container a.btn.btn-secondary.btn-sm:hover {
+  color: #fff;
+}

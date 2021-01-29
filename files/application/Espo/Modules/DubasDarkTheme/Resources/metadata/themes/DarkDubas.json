@@ -1,6 +1,6 @@
 {
-    "stylesheet": "client/modules/DubasDarkTheme/css/espo/dark-dubas.css",
-    "stylesheetIframe": "client/modules/DubasDarkTheme/css/espo/dark-dubas-iframe.css",
+    "stylesheet": "client/modules/dubas-dark-theme/css/espo/dark-dubas.css",
+    "stylesheetIframe": "client/modules/dubas-dark-theme/css/espo/dark-dubas-iframe.css",
     "navbarIsVertical": true,
     "recordTopButtonsStickTop": 61,
     "recordTopButtonsBlockHeight": 21,
