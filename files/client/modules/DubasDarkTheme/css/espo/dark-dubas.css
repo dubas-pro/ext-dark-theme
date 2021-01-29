@@ -4052,14 +4052,14 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary.focus,
 .btn-primary:focus {
     color: #fff;
-    background-color: #415e77;
-    border-color: #263746
+    background-color: #36f;
+    border-color: #fff;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #415e77;
-    border-color: #3d5970
+    background-color: #36f;
+    border-color: #fff;
 }
 
 .btn-primary.active,
