@@ -21454,6 +21454,10 @@ background: #555;
     background-color: #111b28;
 }
 
+.field iframe {
+    background: #fff;
+}
+
 body {
     --theme-name: DarkDubasHorizontal
 }

@@ -22160,6 +22160,10 @@ background: #555;
     vertical-align: -2px
 }
 
+.field iframe {
+    background: #fff;
+}
+
 body {
     --theme-name: DubasDark
 }
