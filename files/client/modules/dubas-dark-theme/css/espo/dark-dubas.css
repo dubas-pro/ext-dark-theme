@@ -4053,13 +4053,13 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary:focus {
     color: #fff;
     background-color: #36f;
-    border-color: #fff;
+    border-color: #36f;
 }
 
 .btn-primary:hover {
     color: #fff;
     background-color: #36f;
-    border-color: #fff;
+    border-color: #36f;
 }
 
 .btn-primary.active,
