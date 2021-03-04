@@ -1,0 +1,15 @@
+{
+    "module": "DubasDarkTheme",
+    "name": "Dubas Dark Theme",
+    "description": "More modern theme adjusted by dubas.pro. Paid support available through email contact@devcrm.it.",
+    "author": "DUBAS - contact@dubas.pro",
+    "acceptableVersions": [
+        ">=6.1.0"
+    ],
+    "php": [
+        ">=7.2"
+    ],
+    "skipBackup": true,
+    "checkVersionUrl": "https://devcrm.it",
+    "releaseDate": "2021-03-04"
+}
