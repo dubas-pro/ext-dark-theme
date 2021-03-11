@@ -17161,7 +17161,8 @@ li.ui-timepicker-selected .ui-timepicker-duration {
     }
 
     #navbar .navbar .nav li.tab-group span.full-label {
-        padding-right: 8px
+        padding-right: 8px;
+        padding-left: 15px
     }
 
     #navbar .navbar ul.nav>li.tab-group>a>span.full-label {
