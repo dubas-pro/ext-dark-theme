@@ -8480,7 +8480,8 @@ button.close {
     padding: 1px 3px;
     background: #0e1621;
     color: #fff;
-    border: 0 solid transparent
+    border: 0 solid transparent;
+    border-radius: 3px;
 }
 
 .selectize-control.multi .selectize-input>div.active {
