@@ -5086,8 +5086,8 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
-    background-color: #eee;
-    border-color: #537898
+    background-color: #3575d3;
+    border-color: #3575d3
 }
 
 .nav .nav-divider {
