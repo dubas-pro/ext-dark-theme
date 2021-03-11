@@ -6598,7 +6598,7 @@ a.thumbnail:hover {
     padding: 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid #172436
+    border: 1px solid #0e1621
 }
 
 .list-group-item:first-child {
@@ -7115,7 +7115,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #e8eced
+    border-top-color: #172436
 }
 
 .panel-default>.panel-heading .badge {
