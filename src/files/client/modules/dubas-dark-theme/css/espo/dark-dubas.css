@@ -20228,7 +20228,7 @@ stream-head-text-container .span {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to bottom, transparent, #fff)
+    background: linear-gradient(to bottom, transparent, #111b28)
 }
 
 .complex-text a {
