@@ -7303,8 +7303,8 @@ button.list-group-item-danger.active:hover {
     font-size: 21px;
     font-weight: 700;
     line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
+    color: #ccc;
+    text-shadow: 0 1px 0 #ccc;
     -webkit-opacity: .2;
     -khtml-opacity: .2;
     -moz-opacity: .2;
@@ -7313,7 +7313,7 @@ button.list-group-item-danger.active:hover {
 
 .close:focus,
 .close:hover {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
     -webkit-opacity: .5;
@@ -20462,27 +20462,33 @@ table.table td.cell .complex-text {
 }
 
 .popup-notification-default {
-    border-color: #999
+    border-color: #999;
+    background: #111b28;
 }
 
 .popup-notification-danger {
-    border-color: #cf605d
+    border-color: #cf605d;
+    background: #111b28;
 }
 
 .popup-notification-warning {
-    border-color: #e4a133
+    border-color: #e4a133;
+    background: #111b28;
 }
 
 .popup-notification-primary {
-    border-color: #537898
+    border-color: #3575d3;
+    background: #111b28;
 }
 
 .popup-notification-success {
-    border-color: #85b75f
+    border-color: #85b75f;
+    background: #111b28;
 }
 
 .popup-notification-info {
-    border-color: #aba8cc
+    border-color: #aba8cc;
+    background: #111b28;
 }
 
 .popup-notification h4 {
@@ -20502,7 +20508,7 @@ table.table td.cell .complex-text {
 }
 
 .popup-notification-primary h4 {
-    color: #537898
+    color: #3575d3
 }
 
 .popup-notification-success h4 {
