@@ -22171,6 +22171,11 @@ background: #555;
     background: #fff;
 }
 
+/* Adding border for events in calendar */
+a.fc-time-grid-event.fc-v-event.fc-event.fc-start.fc-end.fc-draggable.fc-resizable {
+    border-bottom: 0.5px solid #0e1621 !important;
+}
+
 body {
     --theme-name: DubasDark
 }
