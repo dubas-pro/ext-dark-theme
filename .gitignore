@@ -1,0 +1,23 @@
+# Editors
+project.xml
+project.properties
+/nbproject/private/
+.buildpath
+.project
+.settings*
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+.sublimelinterrc
+*.swp
+
+build/
+site/
+vendor/
+node_modules
+config.json
+config.php
+
+# Cache
+.php_cs.cache

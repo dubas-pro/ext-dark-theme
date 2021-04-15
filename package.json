@@ -1,0 +1,17 @@
+{
+  "name": "espocrm-ext-dubas-dark-theme",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DUBAS - contact@dubas.pro",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "archiver": "^4.0.1",
+    "fs-extra": "^9.0.0",
+    "mv": "^2.1.1",
+    "request": "^2.88.2",
+    "unzipper": "^0.10.11"
+  }
+}

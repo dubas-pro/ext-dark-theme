@@ -1,0 +1,20 @@
+{
+    "name": "dubas/ext-dubas-dynamic-pdf",
+    "description": "",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "symplify/easy-coding-standard": "^9.2"
+    },
+    "scripts": {
+        "ecs": [
+            "vendor/bin/ecs check src --fix"
+        ]
+    },
+    "extra": {
+        "scripts-description": {
+            "ecs": "Fix coding standards warnings/errors automatically with PHP Easy Coding Standard"
+        }
+    }
+}
