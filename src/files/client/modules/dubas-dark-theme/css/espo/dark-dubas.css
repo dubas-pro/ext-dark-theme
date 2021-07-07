@@ -1401,7 +1401,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.36;
-    color: #fff;
+    color: #ccc;
     background-color: #0e1621
 }
 
@@ -3362,7 +3362,7 @@ output {
     padding: 6px 10px;
     font-size: 14px;
     line-height: 1.36;
-    color: #f8f8f2;
+    color: #ccc;
     background-color: #172436;
     background-image: none;
     border: 1px solid #111b28;
@@ -3976,7 +3976,7 @@ fieldset[disabled] a.btn {
 }
 
 .btn-default {
-    color: #f8f8f2;
+    color: #ccc;
     background-color: #14202f;
     border-color: #14202f;
 }
@@ -4552,7 +4552,7 @@ tbody.collapse.in {
     clear: both;
     font-weight: 400;
     line-height: 1.36;
-    color: #fff;
+    color: #ccc;
     white-space: nowrap
 }
 
@@ -5816,7 +5816,7 @@ fieldset[disabled] .navbar-default .btn-link:hover {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #dfdfdf
+    color: #ccc
 }
 
 .navbar-inverse .navbar-nav>li>a:focus,
@@ -21511,7 +21511,7 @@ body>footer>p a:visited {
 
 .btn-default>.fa,
 .btn-default>.fas {
-    color: #fff
+    color: #ccc
 }
 
 .btn-default>.fa.text-muted,
