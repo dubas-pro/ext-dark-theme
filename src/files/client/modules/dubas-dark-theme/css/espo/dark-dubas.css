@@ -1717,7 +1717,7 @@ a.text-success:hover {
 }
 
 .text-info {
-    color: #17a2b8
+    color: #5c6bc0
 }
 
 a.text-info:focus,
@@ -1754,7 +1754,7 @@ a.bg-primary:hover {
 }
 
 .bg-success {
-    background-color: #d6e8cc
+    background-color: #4cca6c
 }
 
 a.bg-success:focus,
@@ -3707,7 +3707,7 @@ textarea.input-lg {
 .has-success .input-group-addon {
     color: #52843b;
     border-color: #52843b;
-    background-color: #d6e8cc
+    background-color: #4cca6c
 }
 
 .has-success .form-control-feedback {
@@ -3989,12 +3989,9 @@ fieldset[disabled] a.btn {
 }
 
 .btn-default:hover {
-    /*color: #333;
-    background-color: #dedede;
-    border-color: #adadad*/
-    color: #f8f8f2;
-    background-color: #05080c;
-    border-color: #020304;
+    color: #fff;
+    background-color: #172436;
+    border-color: #172436;
 }
 
 .btn-default.active,
@@ -4066,8 +4063,8 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary:active,
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #415e77;
-    border-color: #3d5970
+    background-color: #36f;
+    border-color: #36f;
 }
 
 .btn-primary.active.focus,
@@ -4080,8 +4077,8 @@ fieldset[disabled] .btn-default:hover {
 .open>.dropdown-toggle.btn-primary:focus,
 .open>.dropdown-toggle.btn-primary:hover {
     color: #fff;
-    background-color: #344c60;
-    border-color: #263746
+    background-color: #36f;
+    border-color: #fff;
 }
 
 .btn-primary.active,
@@ -4099,12 +4096,12 @@ fieldset[disabled] .btn-default:hover {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-    background-color: #537898;
-    border-color: #537898
+    background-color: #36f;
+    border-color: #36f;
 }
 
 .btn-primary .badge {
-    color: #537898;
+    color: #36f;
     background-color: #fff
 }
 
@@ -4117,8 +4114,8 @@ fieldset[disabled] .btn-primary:hover {
 .btn-success.focus,
 .btn-success:focus {
     color: #fff;
-    background-color: #6c9d46;
-    border-color: #47682f
+    background-color: #4cca6c;
+    border-color: #4cca6c
 }
 
 .btn-success:hover {
@@ -4131,8 +4128,8 @@ fieldset[disabled] .btn-primary:hover {
 .btn-success:active,
 .open>.dropdown-toggle.btn-success {
     color: #fff;
-    background-color: #6c9d46;
-    border-color: #679643
+    background-color: #4cca6c;
+    border-color: #4cca6c
 }
 
 .btn-success.active.focus,
@@ -4145,8 +4142,8 @@ fieldset[disabled] .btn-primary:hover {
 .open>.dropdown-toggle.btn-success:focus,
 .open>.dropdown-toggle.btn-success:hover {
     color: #fff;
-    background-color: #5b843b;
-    border-color: #47682f
+    background-color: #4cca6c;
+    border-color: #4cca6c
 }
 
 .btn-success.active,
@@ -4164,12 +4161,12 @@ fieldset[disabled] .btn-primary:hover {
 fieldset[disabled] .btn-success.focus,
 fieldset[disabled] .btn-success:focus,
 fieldset[disabled] .btn-success:hover {
-    background-color: #85b75f;
-    border-color: #85b75f
+    background-color: #4cca6c;
+    border-color: #4cca6c
 }
 
 .btn-success .badge {
-    color: #85b75f;
+    color: #4cca6c;
     background-color: #fff
 }
 
@@ -4229,12 +4226,12 @@ fieldset[disabled] .btn-success:hover {
 fieldset[disabled] .btn-info.focus,
 fieldset[disabled] .btn-info:focus,
 fieldset[disabled] .btn-info:hover {
-    background-color: #aba8cc;
-    border-color: #aba8cc
+    background-color: #3575d3;
+    border-color: #3575d3
 }
 
 .btn-info .badge {
-    color: #aba8cc;
+    color: #3575d3;
     background-color: #fff
 }
 
@@ -6156,7 +6153,7 @@ a.label:hover {
 }
 
 .label-info {
-    background-color: #17a2b8
+    background-color: #5c6bc0
 }
 
 .label-info[href]:focus,
@@ -6363,17 +6360,17 @@ a.thumbnail:hover {
 }
 
 .alert-success {
-    background-color: #d6e8cc;
-    border-color: #cee0ba;
-    color: #52843b
+    background-color: #4cca6c;
+    border-color: #4cca6c;
+    color: #0e1621;
 }
 
 .alert-success hr {
-    border-top-color: #c1d8a9
+    border-top-color: #4cca6c
 }
 
 .alert-success .alert-link {
-    color: #3c612c
+    color: #4cca6c
 }
 
 .alert-info {
@@ -6486,7 +6483,7 @@ a.thumbnail:hover {
 }
 
 .progress-bar-success {
-    background-color: #85b75f
+    background-color: #4cca6c
 }
 
 .progress-striped .progress-bar-success {
@@ -6496,7 +6493,7 @@ a.thumbnail:hover {
 }
 
 .progress-bar-info {
-    background-color: #aba8cc
+    background-color: #3575d3
 }
 
 .progress-striped .progress-bar-info {
@@ -6684,7 +6681,7 @@ button.list-group-item {
 
 .list-group-item-success {
     color: #52843b;
-    background-color: #d6e8cc
+    background-color: #4cca6c
 }
 
 a.list-group-item-success,
@@ -7127,17 +7124,17 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-primary {
-    border-color: #849fab
+    border-color: #5c6bc0
 }
 
 .panel-primary>.panel-heading {
     color: #fff;
     background-color: #3575d3;
-    border-color: #849fab
+    border-color: #5c6bc0
 }
 
 .panel-primary>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #849fab
+    border-top-color: #5c6bc0
 }
 
 .panel-primary>.panel-heading .badge {
@@ -7146,7 +7143,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-primary>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #849fab
+    border-bottom-color: #5c6bc0
 }
 
 .panel-success {
@@ -7160,16 +7157,16 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel-success>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #cee0ba
+    border-top-color: #4cca6c
 }
 
 .panel-success>.panel-heading .badge {
-    color: #d6e8cc;
+    color: #4cca6c;
     background-color: #52843b
 }
 
 .panel-success>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #cee0ba
+    border-bottom-color: #4cca6c
 }
 
 .panel-info {
@@ -18540,7 +18537,7 @@ div.list-kanban>div>table {
 div.list-kanban>div>table th.group-header {
     font-weight: 400;
     color: #fff;
-    background-color: #999;
+    background-color: #172436;
     position: relative;
     padding: 0;
     margin: 0;
@@ -18576,7 +18573,7 @@ div.list-kanban>div>table th.group-header>div:after {
 div.list-kanban>div>table th.group-header>div:before {
     left: calc(100% - 12px);
     z-index: 2;
-    border-color: transparent transparent transparent #999
+    border-color: transparent transparent transparent #172436
 }
 
 div.list-kanban>div>table th.group-header:last-child>div:after {
@@ -18584,27 +18581,27 @@ div.list-kanban>div>table th.group-header:last-child>div:after {
 }
 
 div.list-kanban>div>table th.group-header.group-header-success {
-    background-color: #85b75f
+    background-color: #4cca6c
 }
 
 div.list-kanban>div>table th.group-header.group-header-success>div:before {
-    border-color: transparent transparent transparent #85b75f
+    border-color: transparent transparent transparent #4cca6c
 }
 
 div.list-kanban>div>table th.group-header.group-header-before-success>div:after {
-    background-color: #85b75f
+    background-color: #4cca6c
 }
 
 div.list-kanban>div>table th.group-header.group-header-primary {
-    background-color: #849fab
+    background-color: #5c6bc0
 }
 
 div.list-kanban>div>table th.group-header.group-header-primary>div:before {
-    border-color: transparent transparent transparent #849fab
+    border-color: transparent transparent transparent #5c6bc0
 }
 
 div.list-kanban>div>table th.group-header.group-header-before-primary>div:after {
-    background-color: #849fab
+    background-color: #5c6bc0
 }
 
 div.list-kanban>div>table th.group-header.group-header-danger {
@@ -18632,15 +18629,15 @@ div.list-kanban>div>table th.group-header.group-header-before-warning>div:after 
 }
 
 div.list-kanban>div>table th.group-header.group-header-info {
-    background-color: #aba8cc
+    background-color: #3575d3
 }
 
 div.list-kanban>div>table th.group-header.group-header-info>div:before {
-    border-color: transparent transparent transparent #aba8cc
+    border-color: transparent transparent transparent #3575d3
 }
 
 div.list-kanban>div>table th.group-header.group-header-before-info>div:after {
-    background-color: #aba8cc
+    background-color: #3575d3
 }
 
 div.list-kanban>div>table th:last-child>div:after,
@@ -20483,12 +20480,12 @@ table.table td.cell .complex-text {
 }
 
 .popup-notification-success {
-    border-color: #85b75f;
+    border-color: #4cca6c;
     background: #111b28;
 }
 
 .popup-notification-info {
-    border-color: #aba8cc;
+    border-color: #3575d3;
     background: #111b28;
 }
 
@@ -20513,7 +20510,7 @@ table.table td.cell .complex-text {
 }
 
 .popup-notification-success h4 {
-    color: #85b75f
+    color: #4cca6c
 }
 
 @media screen and (max-width:767px) {
