@@ -1401,7 +1401,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.36;
-    color: #ccc;
+    color: #dddddd;
     background-color: #0e1621
 }
 
@@ -19000,7 +19000,7 @@ ul.dropdown-menu>li.checkbox:last-child {
 .cell>.field {
     overflow-wrap: break-word;
     word-wrap: break-word;
-    color: #fdfdfd;
+    color: #fff;
 }
 
 .field .row {
