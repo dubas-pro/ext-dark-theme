@@ -4175,8 +4175,8 @@ fieldset[disabled] .btn-success:hover {
 
 .btn-info {
     color: #fff;
-    background-color: #aba8cc;
-    border-color: #aba8cc
+    background-color: #5c6bc0;
+    border-color: #5c6bc0
 }
 
 .btn-info.focus,
@@ -4188,8 +4188,8 @@ fieldset[disabled] .btn-success:hover {
 
 .btn-info:hover {
     color: #fff;
-    background-color: #8c88b9;
-    border-color: #8681b5
+    background-color: #475393;
+    border-color: #475393
 }
 
 .btn-info.active,
@@ -6377,45 +6377,45 @@ a.thumbnail:hover {
 }
 
 .alert-info {
-    background-color: #dbd0f5;
-    border-color: #bab3ef;
-    color: #83779c
+    background-color: #5c6bc0;
+    border-color: #475393;
+    color: #fff;
 }
 
 .alert-info hr {
-    border-top-color: #a89eea
+    border-top-color: #5c6bc0
 }
 
 .alert-info .alert-link {
-    color: #6a5e82
+    color: #5c6bc0
 }
 
 .alert-warning {
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #9e7328
+    background-color: #e4a133;
+    border-color: #e4a133;
+    color: #fff;
 }
 
 .alert-warning hr {
-    border-top-color: #f7e1b5
+    border-top-color: #e4a133
 }
 
 .alert-warning .alert-link {
-    color: #75551e
+    color: #e4a133
 }
 
 .alert-danger {
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #ad4846
+    background-color: #cf605d;
+    border-color: #cf605d;
+    color: #fff;
 }
 
 .alert-danger hr {
-    border-top-color: #e4b9c0
+    border-top-color: #cf605d
 }
 
 .alert-danger .alert-link {
-    color: #893937
+    color: #cf605d
 }
 
 @-webkit-keyframes progress-bar-stripes {
