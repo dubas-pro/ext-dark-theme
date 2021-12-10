@@ -18999,7 +18999,8 @@ ul.dropdown-menu>li.checkbox:last-child {
 
 .cell>.field {
     overflow-wrap: break-word;
-    word-wrap: break-word
+    word-wrap: break-word;
+    color: #fdfdfd;
 }
 
 .field .row {
