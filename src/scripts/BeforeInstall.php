@@ -1,6 +1,6 @@
 <?php
 
-class AfterInstall
+class BeforeInstall
 {
     protected $container;
 

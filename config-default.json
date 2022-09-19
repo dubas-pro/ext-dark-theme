@@ -5,7 +5,7 @@
     },
     "database": {
         "driver": "pdo_mysql",
-        "host": "localhost",
+        "host": "mysql",
         "port": "",
         "charset": "utf8mb4",
         "dbname": "ext-dubas-dark-theme",
@@ -14,9 +14,9 @@
     },
     "install": {
         "language": "en_US",
-        "defaultOwner": "www-data",
-        "defaultGroup": "www-data",
-        "siteUrl": "http://localhost/ext-dubas-dark-theme/site",
+        "defaultOwner": "",
+        "defaultGroup": "",
+        "siteUrl": "http://localhost:8080",
         "adminUsername": "admin",
         "adminPassword": "1"
     }
