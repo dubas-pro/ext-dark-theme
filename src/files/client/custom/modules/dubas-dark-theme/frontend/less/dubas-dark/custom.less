@@ -155,17 +155,17 @@ body>footer>p.credit:after {
 }
 
 @media screen and (min-width: 768px) {
-    body #notifications-panel {
+    body[data-navbar="side"] #notifications-panel {
         margin-top: 70px !important;
     }
 
-    body #navbar .navbar-right>li.open>a, 
+    body[data-navbar="side"] #navbar .navbar-right>li.open>a, 
     body.minimized.side-menu-opened #navbar .navbar-right>li.open>a {
         color: #fff !important;
         background-color: @navbar-link-active-bg !important;
     }
 
-    body .notifications-badge-container>.notifications-button>.number-badge {
+    body[data-navbar="side"] .notifications-badge-container>.notifications-button>.number-badge {
         top: 25px !important;
     }
 }
