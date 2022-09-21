@@ -1,0 +1,21 @@
+{
+    "stylesheet": "client/custom/modules/dubas-dark-theme/css/espo/dubas-navy-blue.css",
+    "stylesheetIframe": "client/custom/modules/dubas-dark-theme/css/espo/dubas-navy-blue-iframe.css",
+    "navbarIsVertical": true,
+    "recordTopButtonsStickTop": 61,
+    "recordTopButtonsBlockHeight": 21,
+    "dashboardCellHeight": 155,
+    "dashboardCellMargin": 19,
+    "modalFooterAtTheTop": true,
+    "modalFullHeight": true,
+    "fontSize": 14,
+    "navbarHeight": 30,
+    "logo": "client/img/logo-37.png",
+    "textColor": "#999",
+    "chartGridColor": "#ccc",
+    "chartTickColor": "#333",
+    "chartSuccessColor": "#85b75f",
+    "chartColorList": ["#7492cc", "#c29c4a", "#a1404a", "#6a5f96", "#b07e53", "#3a5691", "#7c593d", "#a17a97", "#858585"],
+    "chartColorAlternativeList": ["#7492cc", "#c29c4a", "#a1404a", "#6a5f96", "#b07e53"],
+    "isDark": true
+}
