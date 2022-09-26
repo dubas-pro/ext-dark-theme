@@ -30,7 +30,7 @@
         </div>
         <div class="text-center">
             <a href="https://www.espocrm.com/" target="_blank" class="btn btn-secondary btn-sm">© 2022 EspoCRM</a> | 
-            <a href="https://devcrm.it" target="_blank" class="btn btn-secondary btn-sm">
+            <a href="https://devcrm.it/dark-theme?utm_source=ext-dark-theme" target="_blank" class="btn btn-secondary btn-sm">
                 <i class="fa fa-code"></i> by devcrm.it </a>
         </div>
     </div>
