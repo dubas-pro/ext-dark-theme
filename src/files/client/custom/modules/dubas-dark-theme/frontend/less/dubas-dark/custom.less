@@ -4,7 +4,7 @@ a:focus, a:hover {
 }
 
 @media screen and (min-width: 768px) {
-    body #navbar .navbar-right, 
+    body[data-navbar="side"] #navbar .navbar-right, 
     body .minimized.side-menu-opened #navbar .navbar-right {
         bottom: 20px;
         position: fixed;
@@ -18,7 +18,7 @@ a:focus, a:hover {
     }
 }
 
-#navbar .navbar .navbar-form.global-search-container {
+body[data-navbar="side"] #navbar .navbar .navbar-form.global-search-container {
     padding-left: 0;
     padding-right: 0;
     margin-top: 20px;
@@ -52,11 +52,11 @@ div#main {
     margin-top: 5%;
 }
 
-body #navbar ul.tabs>li>a {
+body[data-navbar="side"] #navbar ul.tabs>li>a {
     height: 45px;
 }
 
-body #navbar ul.tabs li>a,
+body[data-navbar="side"] #navbar ul.tabs li>a,
 body.minimized.side-menu-opened #navbar ul.tabs li>a {
     padding-top: 13px;
     padding-bottom: 9px;
@@ -91,18 +91,11 @@ body>footer>p.credit:after {
 }
 
 @media screen and (min-width:768px) {
-    body #navbar .navbar-right>li.open>a, body.minimized.side-menu-opened #navbar .navbar-right>li.open>a {
-        // background-color: var(--navbar-link-active-bg);
+    body[data-navbar="side"] #navbar .navbar-right>li.open>a, body.minimized.side-menu-opened #navbar .navbar-right>li.open>a {
         background-color: #172436;
         color: #000;
     }
 }
-
-// .navbar-inverse .navbar-nav>li>a:focus, 
-// .navbar-inverse .navbar-nav>li>a:hover {
-//     color: #fff;
-//     background-color: #1d2e45;
-// }
 
 .navbar-inverse .navbar-nav>li>a {
     color: #dfdfdf;
@@ -134,7 +127,7 @@ body>footer>p.credit:after {
 }
 
 @media screen and (min-width: 768px) {
-    body #navbar ul.tabs li.tab>a, 
+    body[data-navbar="side"] #navbar ul.tabs li.tab>a, 
     body.minimized.side-menu-opened #navbar ul.tabs li.tab>a {
         padding-left: 12px;
         padding-right: 20px;
@@ -142,7 +135,8 @@ body>footer>p.credit:after {
         margin-bottom: 8px !important;
     }
 
-    body #navbar ul.tabs li>a, body.minimized.side-menu-opened #navbar ul.tabs li>a {
+    body[data-navbar="side"] #navbar ul.tabs li>a, 
+    body.minimized.side-menu-opened #navbar ul.tabs li>a {
         padding-top: 13px !important;
         padding-bottom: 12px !important;
         padding-left: 12px;
@@ -190,6 +184,6 @@ ul.dropdown-menu {
     background-color: @panel-bg-value;
 }
 
-ul.nav.navbar-nav.tabs {
+body[data-navbar="side"] ul.nav.navbar-nav.tabs {
     border-right: 1px solid #1c2126;
 }
