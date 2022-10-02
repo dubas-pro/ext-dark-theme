@@ -1,5 +1,5 @@
-<div class="auth">
-    <div class="auth-container">
+<div class="container content">
+    <div id="login" class="auth-container">
         <div class="card">
             <header class="auth-header">
                 <h1 class="auth-title">
