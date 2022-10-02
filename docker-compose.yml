@@ -1,0 +1,139 @@
+---
+version: '3'
+
+################################################################################
+# SERVICES
+################################################################################
+services:
+  # ------------------------------------------------------------
+  # Traefik Reverse Proxy
+  # ------------------------------------------------------------
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    restart: always
+
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+
+    command:
+      - --log.level=DEBUG
+
+      - --entrypoints.http.address=:80
+      - --entryPoints.http.forwardedheaders.insecure
+
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+
+      - --api=false
+      - --api.insecure=false
+      - --api.dashboard=false
+
+      - --global.sendanonymoususage=false
+      - --global.checknewversion=false
+      - --pilot.dashboard=false
+
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  # ------------------------------------------------------------
+  # PHP
+  # ------------------------------------------------------------
+  php:
+    image: devilbox/php-fpm:${PHP_SERVER:-8.1}-work
+    container_name: php
+    hostname: php
+
+    working_dir: /var/www/default
+
+    environment:
+      ##
+      ## Debug/Logging
+      ##
+      - DEBUG_ENTRYPOINT=2
+      - DEBUG_COMPOSE_ENTRYPOINT=2
+      - DOCKER_LOGS=1
+
+      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
+      - COMPOSER_MEMORY_LIMIT=-1
+
+    volumes:
+      - ${PWD}:/var/www/default:rw
+
+      # Users SSH directory (read-only)
+      - ${SSH_AUTH_SOCK_DIR:-/dev/null}:${SSH_AUTH_SOCK_DIR:-/dev/null}
+      - ${HOME}/.ssh:/home/devilbox/.ssh:ro
+
+      # Users .bash_history file
+      - ${HOME}/.bash_history:/home/devilbox/.bash_history:rw
+
+      # Mount devilbox user-defined PHP-FPM startup *.sh scripts
+      - ${PWD}/docker/cfg/php-startup-${PHP_SERVER:-8.1}:/startup.1.d:rw
+      - ${PWD}/docker/autostart:/startup.2.d:rw
+
+  # ------------------------------------------------------------
+  # Web Server
+  # ------------------------------------------------------------
+  httpd:
+    image: devilbox/apache-2.4:latest
+    container_name: httpd
+    restart: always
+    hostname: httpd
+
+    environment:
+      - MAIN_VHOST_DOCROOT=site
+      - PHP_FPM_ENABLE=1
+      - PHP_FPM_SERVER_ADDR=php
+      - PHP_FPM_SERVER_PORT=9000
+      - PHP_FPM_TIMEOUT=180
+
+    volumes:
+      - $PWD:/var/www/default:rw
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.espocrm.rule=Host(`localhost`)
+      - traefik.http.routers.espocrm.entrypoints=http
+
+  # ------------------------------------------------------------
+  # MySQL Database
+  # ------------------------------------------------------------
+  mysql:
+    image: devilbox/mysql:mariadb-10.5
+    container_name: mysql
+    hostname: mysql
+
+    ports:
+      - "3${HTTP_PORT:-8080}:3306"
+
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ALLOW_EMPTY_PASSWORD=${MYSQL_ALLOW_EMPTY_PASSWORD:-yes}
+      - MYSQL_USER=${MYSQL_PASSWORD:-espocrm}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-espocrm}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-espocrm}
+
+    volumes:
+      - mysql:/var/lib/mysql:rw
+
+  # -----------------------------------------------------------------------------------------------
+  # Ngrok
+  # -----------------------------------------------------------------------------------------------
+  ngrok:
+    image: wernight/ngrok:latest
+    container_name: ngrok
+
+    environment:
+      - NGROK_PORT=httpd:80
+      - NGROK_REGION=${NGROK_REGION:-eu}
+      - NGROK_AUTH=${NGROK_AUTH:-}
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ngrok.rule=Host(`ngrok.localhost`)
+      - traefik.http.routers.ngrok.entrypoints=http
+      - traefik.http.services.ngrok.loadbalancer.server.port=4040
+
+volumes:
+  mysql: null

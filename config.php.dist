@@ -1,0 +1,30 @@
+<?php
+return [
+    'theme' => 'DubasDark',
+    'defaultPermissions' => [
+        'user' => null,
+        'group' => null
+    ],
+    'useWebSocket' => false,
+    'webSocketUrl' => 'ws://localhost:8080/ws',
+    'webSocketZeroMQSubscriberDsn' => 'tcp://*:7777',
+    'webSocketZeroMQSubmissionDsn' => 'tcp://espocrm-websocket:7777',
+    'timeZone' => 'Europe/Warsaw',
+    'dateFormat' => 'DD/MM/YYYY',
+    'timeFormat' => 'HH:mm',
+    'weekStart' => 1,
+    'logger' => [
+        'path' => 'data/logs/espo.log',
+        'level' => 'DEBUG',
+        'rotation' => false
+    ],
+    'outboundEmailIsShared' => true,
+    'outboundEmailFromName' => 'EspoCRM',
+    'outboundEmailFromAddress' => 'admin@espocrm.localhost',
+    'smtpServer' => 'smtp4dev',
+    'smtpPort' => 25,
+    'smtpAuth' => false,
+    'smtpSecurity' => '',
+    'smtpUsername' => '',
+    'smtpPassword' => '',
+];

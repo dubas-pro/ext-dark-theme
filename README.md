@@ -1,13 +1,13 @@
 # Dubas Dark Theme for EspoCRM
-![Screenshot of Dubas Dark Theme](https://devcrm.it/files/2020-10-07_16-23-22_b0e116-ql-835330_f2303fa6518063.png)
+![Screenshot of Dubas Dark Theme](https://devcrm.it/files/2022-10-02_13-23-09_8c7a50-ol-746973_deffe53a473b0c.png)
 The theme created by devcrm.it to EspoCRM. The theme is available for download as an extension to EspoCRM at [https://devcrm.it/dark-theme](https://devcrm.it/dark-theme).
 
 This repo is for comments only, but we do not give any warranty for the theme or installer. You install this theme on your own responsibility. We do not provide additional free support.
 
 ## Requirements
-EspoCRM in version higher than 6.1.0.
+EspoCRM in version higher than 7.2.0.
 
-EspoCRM devs change many things in 6.0.0 version, that's why theme is not compatible with previous versions. 
+EspoCRM devs changed many things in 7.2.0 version, that's why theme is not compatible with previous versions. If you want to use previous version of EspoCRM with Dark Theme, you can simply use previous versions of theme which are available on [our website](https://devcrm.it/dark-theme).
 
 ## Getting started
 1. Open our website [https://devcrm.it/dark-theme](https://devcrm.it/dark-theme) and download installer;

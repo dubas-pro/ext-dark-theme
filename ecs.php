@@ -1,46 +1,53 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
+$header = 'This file is part of the %s - EspoCRM extension.
 
-/*
- * This document has been generated with
- * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16.4|configurator
- * you can change this configuration by importing this file.
- */
+%s
+Copyright (C) %s %s
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-// use Symplify\EasyCodingStandard\Configuration\Option;
-use Symplify\EasyCodingStandard\ValueObject\Option;
-use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PATHS, [
-        __DIR__.'/src',
-        __DIR__.'/tests',
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.';
+
+return static function (\Symplify\EasyCodingStandard\Config\ECSConfig $ecsConfig) use ($header): void {
+    $ecsConfig->paths([__DIR__ . '/src', __DIR__ . '/tests']);
+
+    $ecsConfig->skip([
+        \PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer::class,
     ]);
 
-    $parameters->set(Option::SKIP, [
-        __DIR__.'/vendor',
+    $extension = json_decode(file_get_contents(__DIR__ . '/extension.json'));
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Comment\HeaderCommentFixer::class, [
+        'header' => sprintf($header, $extension->name, $extension->author, date('Y'), implode(', ', $extension->authors)),
+        'comment_type' => \PhpCsFixer\Fixer\Comment\HeaderCommentFixer::HEADER_PHPDOC,
+        'location' => 'after_open',
+        'separate' => 'bottom',
     ]);
 
-    $parameters->set(Option::SETS, [
-        SetList::CLEAN_CODE,
-        SetList::PSR_12,
+    $ecsConfig->rules([
+        \PHP_CodeSniffer\Standards\PSR2\Sniffs\Namespaces\UseDeclarationSniff::class,
+        \PhpCsFixer\Fixer\Import\NoUnusedImportsFixer::class,
     ]);
 
-    $services = $containerConfigurator->services();
-    $services->set(PhpCsFixer\Fixer\Comment\HeaderCommentFixer::class)
-             ->call('configure', [[
-                'header' => <<<EOT
-                This file is part of the Dubas Dark Theme for EspoCRM.
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class, [
+        'tokens' => [
+            'use'
+        ]
+    ]);
 
-                (c) DUBAS S.C.
-                Website: https://dubas.pro
-                                
-                For the full copyright and license information, please view the LICENSE
-                file that was distributed with this source code.
-                EOT,
-                'location' => 'after_open',
-                ]]);
+    $ecsConfig->sets([
+        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::SPACES,
+        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::ARRAY,
+        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::DOCBLOCK,
+        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::PSR_12,
+    ]);
 };
