@@ -88,45 +88,18 @@ body>footer>p.credit:after {
 
 @media screen and (min-width:768px) {
     body[data-navbar="side"] #navbar .navbar-right>li.open>a, body.minimized.side-menu-opened #navbar .navbar-right>li.open>a {
-        // background-color: var(--navbar-link-active-bg);
         background-color: #172436;
         color: #000;
     }
 }
 
-// .navbar-inverse .navbar-nav>li>a:focus, 
-// .navbar-inverse .navbar-nav>li>a:hover {
-//     color: #fff;
-//     background-color: #1d2e45;
-// }
-
 .navbar-inverse .navbar-nav>li>a {
     color: #dfdfdf;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus {//, .navbar-right-container .navbar-inverse .navbar-nav>li>a:hover {
+.navbar-inverse .navbar-nav>li>a:focus {
     color: #fff;
     background-color: transparent;
-}
-
-* {
-    scrollbar-width: thin;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    width: 8px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-    background-color: @navbar-inverse-bg;
-    border-radius: 20px;
-    width: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -185,4 +158,24 @@ ul.dropdown-menu {
 
 .dialog-record .modal-content>.modal-body {
     background-color: @panel-bg-value;
+}
+
+* {
+    scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: @navbar-inverse-bg;
+    border-radius: 20px;
+    width: 8px;
 }

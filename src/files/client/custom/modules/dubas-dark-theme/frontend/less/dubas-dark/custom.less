@@ -101,29 +101,9 @@ body>footer>p.credit:after {
     color: #dfdfdf;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus {//, .navbar-right-container .navbar-inverse .navbar-nav>li>a:hover {
+.navbar-inverse .navbar-nav>li>a:focus {
     color: #fff;
     background-color: transparent;
-}
-
-* {
-    scrollbar-width: thin;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    width: 8px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-    background-color: @navbar-inverse-bg;
-    border-radius: 20px;
-    width: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -186,4 +166,24 @@ ul.dropdown-menu {
 
 body[data-navbar="side"] ul.nav.navbar-nav.tabs {
     border-right: 1px solid #1c2126;
+}
+
+* {
+    scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: @navbar-inverse-bg;
+    border-radius: 20px;
+    width: 8px;
 }
