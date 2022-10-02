@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the Dubas Dark - EspoCRM extension.
+ * This file is part of the Dubas Dark Theme - EspoCRM extension.
  *
  * DUBAS S.C. - contact@dubas.pro
  * Copyright (C) 2022 Arkadiy Asuratov, Emil Dubielecki
