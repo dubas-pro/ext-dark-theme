@@ -1,5 +1,5 @@
 # Dubas Dark Theme for EspoCRM
-![Screenshot of Dubas Dark Theme](https://devcrm.it/files/2020-10-07_16-23-22_b0e116-ql-835330_f2303fa6518063.png)
+![Screenshot of Dubas Dark Theme](https://devcrm.it/files/2022-10-02_13-23-09_8c7a50-ol-746973_deffe53a473b0c.png)
 The theme created by devcrm.it to EspoCRM. The theme is available for download as an extension to EspoCRM at [https://devcrm.it/dark-theme](https://devcrm.it/dark-theme).
 
 This repo is for comments only, but we do not give any warranty for the theme or installer. You install this theme on your own responsibility. We do not provide additional free support.
