@@ -41,7 +41,7 @@ services:
   # PHP
   # ------------------------------------------------------------
   php:
-    image: devilbox/php-fpm:${PHP_SERVER:-8.1}-work
+    image: devilbox/php-fpm:8.1-work-release-0.144
     container_name: php
     hostname: php
 
@@ -76,7 +76,7 @@ services:
   # Web Server
   # ------------------------------------------------------------
   httpd:
-    image: devilbox/apache-2.4:latest
+    image: devilbox/apache-2.4:0.48
     container_name: httpd
     restart: always
     hostname: httpd
