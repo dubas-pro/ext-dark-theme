@@ -48,7 +48,7 @@ body[data-navbar="side"] #navbar .navbar .navbar-form.global-search-container {
     border-bottom: 1px #ccc solid;
 }
 
-div#main {
+body[data-navbar="side"] div#main {
     margin-top: 5%;
 }
 
@@ -160,6 +160,29 @@ ul.dropdown-menu {
     background-color: @panel-bg-value;
 }
 
+body[data-navbar=side] .stick-sub {
+    margin-top: 68px;
+}
+
+/* Radio field */
+input[type=radio].form-radio:checked {
+    border-color: #fff;
+    background-color: @input-bg;
+}
+
+div.selectize-dropdown, div.single, div.plugin-espo_select {
+    border: 1px solid #172436;
+}
+
+.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
+    border-color: #242a30 !important;
+}
+
+div.fc-bgevent {
+    background-color: #172436 !important;
+}
+
+/* Scrollbar */
 * {
     scrollbar-width: thin;
 }

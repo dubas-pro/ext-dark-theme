@@ -29,7 +29,7 @@ node_modules/
 vendor/
 
 # Extension Directory
-src/**/client/**/lib/*
+# src/**/client/**/lib/*
 src/**/client/**/css/espo/*
 src/**/client/**/fonts/*
 
