@@ -1,5 +1,6 @@
-<div class="container content">
-    <div id="login" class="auth-container">
+
+<div class="auth">
+    <div class="auth-container">
         <div class="card">
             <header class="auth-header">
                 <h1 class="auth-title">
@@ -20,7 +21,7 @@
                         <input type="password" name="password" id="field-password" class="form-control" tabindex="2" autocomplete="current-password">
                     </div>
                     <div class="form-group">
-                        {{#if showForgotPassword}}<a href="javascript:" data-action="passwordChangeRequest" class="forgot-btn pull-right">{{translate 'Forgot Password?' scope='User'}}</a>{{/if}}
+                        {{#if showForgotPassword}}<a href="javascript:" data-action="passwordChangeRequest" class="forgot-btn btn-sm pull-right">{{translate 'Forgot Password?' scope='User'}}</a>{{/if}}
                     </div>
                     <div class="form-group">
                         <button type="submit" id="btn-login" class="btn btn-block btn-primary">{{translate 'Login' scope='User'}}</button>
@@ -29,9 +30,12 @@
             </div>
         </div>
         <div class="text-center">
-            <a href="https://www.espocrm.com/" target="_blank" class="btn btn-secondary btn-sm">© 2022 EspoCRM</a> | 
-            <a href="https://devcrm.it/dark-theme?utm_source=ext-dark-theme" target="_blank" class="btn btn-secondary btn-sm">
-                <i class="fa fa-code"></i> by devcrm.it </a>
+            <a href="https://www.espocrm.com/" target="_blank" class="btn btn-secondary btn-sm">© 2023 EspoCRM</a> | 
+            <a href="https://devcrm.it" target="_blank" class="btn btn-secondary btn-sm">
+                <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by devcrm.it </a>
         </div>
     </div>
 </div>
+
+
+
