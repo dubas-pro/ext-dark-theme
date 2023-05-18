@@ -6,13 +6,5 @@
     "developerModeScriptList": [
        "__APPEND__",
       "client/custom/modules/dubas-dark-theme/lib/js/loginPage.js"
-    ],
-     "cssList": [
-        "__APPEND__",
-       "client/custom/modules/dubas-dark-theme/lib/css/loginPage.css"              
-    ],
-    "developerModeCssList": [
-        "__APPEND__",
-       "client/custom/modules/dubas-dark-theme/lib/css/loginPage.css"              
     ]
 }
