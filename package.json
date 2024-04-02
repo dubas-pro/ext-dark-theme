@@ -3,12 +3,18 @@
     "version": "2.3.0",
     "packageManager": "pnpm@7.0.1",
     "description": "",
-    "scripts": {
-        "eslint:fix": "eslint --fix src/**/src/**/*.js",
-        "lint:json": "prettier --write src/**/*.json",
-        "build": "cd src/files/client/custom/modules/dubas-dark-theme; pnpm exec grunt"
+    "engines": {
+        "npm": ">=7",
+        "node": ">=15"
     },
-    "author": "DUBAS S.C. - contact@dubas.pro",
+    "scripts": {
+        "js:fix": "eslint --fix src/**/src/**/*.js",
+        "json:fix": "prettier --write src/**/*.json",
+        "php:fix": "composer exec ecs -- --fix --clear-cache",
+        "phpstan": "composer exec phpstan -- --xdebug",
+        "rector": "composer exec rector -- --clear-cache"
+    },
+    "author": "dubas s.c. - contact@dubas.pro",
     "license": "GPL-3.0",
     "dependencies": {
         "eslint": "^7.25.0",
@@ -17,7 +23,7 @@
     },
     "devDependencies": {
         "grunt-contrib-copy": "^1.0.0",
-        "grunt-contrib-cssmin": "^4.0.0",
+        "grunt-contrib-cssmin": "^5.0.0",
         "grunt-contrib-less": "^3.0.0"
     }
 }

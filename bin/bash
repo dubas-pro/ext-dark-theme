@@ -2,4 +2,4 @@
 
 set -eu
 
-docker-compose exec -u devilbox php /bin/bash "$@"
+docker exec --interactive --tty --user devilbox php /bin/bash "$@"

@@ -3,7 +3,7 @@
 $header = 'This file is part of the %s - EspoCRM extension.
 
 %s
-Copyright (C) %s %s
+Copyright (C) %s-%s %s
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,7 +27,14 @@ return static function (\Symplify\EasyCodingStandard\Config\ECSConfig $ecsConfig
 
     $extension = json_decode(file_get_contents(__DIR__ . '/extension.json'));
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Comment\HeaderCommentFixer::class, [
-        'header' => sprintf($header, $extension->name, $extension->author, date('Y'), implode(', ', $extension->authors)),
+        'header' => sprintf(
+            $header,
+            $extension->name,
+            $extension->author,
+            date('Y', strtotime($extension->releaseDate)),
+            date('Y'),
+            implode(', ', $extension->authors)
+        ),
         'comment_type' => \PhpCsFixer\Fixer\Comment\HeaderCommentFixer::HEADER_PHPDOC,
         'location' => 'after_open',
         'separate' => 'bottom',
@@ -36,6 +43,7 @@ return static function (\Symplify\EasyCodingStandard\Config\ECSConfig $ecsConfig
     $ecsConfig->rules([
         \PHP_CodeSniffer\Standards\PSR2\Sniffs\Namespaces\UseDeclarationSniff::class,
         \PhpCsFixer\Fixer\Import\NoUnusedImportsFixer::class,
+        \PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class,
     ]);
 
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class, [

@@ -1,6 +1,5 @@
 <?php
 return [
-    'theme' => 'DubasDark',
     'defaultPermissions' => [
         'user' => null,
         'group' => null
@@ -13,10 +12,20 @@ return [
     'dateFormat' => 'DD/MM/YYYY',
     'timeFormat' => 'HH:mm',
     'weekStart' => 1,
+    'currencyList' => [
+        0 => 'USD',
+        1 => 'PLN'
+    ],
+    'defaultCurrency' => 'USD',
     'logger' => [
         'path' => 'data/logs/espo.log',
         'level' => 'DEBUG',
         'rotation' => false
+    ],
+    'language' => 'en_US',
+    'languageList' => [
+        0 => 'en_US',
+        1 => 'pl_PL'
     ],
     'outboundEmailIsShared' => true,
     'outboundEmailFromName' => 'EspoCRM',

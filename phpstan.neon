@@ -1,0 +1,17 @@
+parameters:
+  phpVersion: 80100 # PHP 8.0
+  level: 8
+  paths:
+    - src
+
+  excludePaths:
+    analyse:
+      - site
+      - src/*/vendor/*
+
+  bootstrapFiles:
+    - site/bootstrap.php
+
+  inferPrivatePropertyTypeFromConstructor: true
+  treatPhpDocTypesAsCertain: false
+  reportUnmatchedIgnoredErrors: false

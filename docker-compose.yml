@@ -2,138 +2,128 @@
 version: '3'
 
 ################################################################################
+# EXTENSION FIELDS (X-PROPERTIES)
+# https://docs.docker.com/compose/compose-file/#extension
+################################################################################
+x-php-build-args: &php-build-args
+  PHP_VERSION: ${PHP_VERSION:-8.2-work}
+  DOCKER_DAEMON_SH: |-
+    #!/bin/bash
+    set -eu
+    /usr/local/bin/php /var/www/default/site/daemon.php
+    exec "$$@"
+  DOCKER_WEBSOCKET_SH: |-
+    #!/bin/bash
+    set -eu
+    /usr/local/bin/php /var/www/default/site/websocket.php
+    exec "$$@"
+
+################################################################################
+# VOLUMES
+################################################################################
+volumes:
+  mysql: {}
+
+################################################################################
 # SERVICES
 ################################################################################
 services:
   # ------------------------------------------------------------
-  # Traefik Reverse Proxy
-  # ------------------------------------------------------------
-  traefik:
-    image: traefik:latest
-    container_name: traefik
-    restart: always
-
-    ports:
-      - "${HTTP_PORT:-8080}:80"
-
-    command:
-      - --log.level=DEBUG
-
-      - --entrypoints.http.address=:80
-      - --entryPoints.http.forwardedheaders.insecure
-
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-
-      - --api=false
-      - --api.insecure=false
-      - --api.dashboard=false
-
-      - --global.sendanonymoususage=false
-      - --global.checknewversion=false
-      - --pilot.dashboard=false
-
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-
-  # ------------------------------------------------------------
   # PHP
   # ------------------------------------------------------------
-  php:
-    image: devilbox/php-fpm:8.1-work-release-0.144
+  php: &php
     container_name: php
-    hostname: php
-
+    restart: unless-stopped
     working_dir: /var/www/default
-
+    volumes: [.:/var/www/default:rw]
     environment:
-      ##
-      ## Debug/Logging
-      ##
-      - DEBUG_ENTRYPOINT=2
-      - DEBUG_COMPOSE_ENTRYPOINT=2
-      - DOCKER_LOGS=1
+      NEW_UID: 1000
+      NEW_GID: 1000
+      DEBUG_ENTRYPOINT: '2'
+      DEBUG_COMPOSE_ENTRYPOINT: '2'
+      DOCKER_LOGS: '1'
+      COMPOSER_MEMORY_LIMIT: '-1'
+      COMPOSER_POOL_OPTIMIZER: '0'
+    # -----------------------------------------------
+    # Build
+    # -----------------------------------------------
+    build: &php-build
+      args:
+        <<: *php-build-args
+      dockerfile_inline: |
+        ARG PHP_VERSION
+        FROM devilbox/php-fpm:$${PHP_VERSION}
+        USER devilbox
+        RUN if [ "$${PHP_VERSION#8}" != "$$PHP_VERSION" ]; then \
+          /usr/local/bin/composer global require dubas/espo-console phpstan/phpstan; \
+        fi
+        USER root
+        RUN if [ "$${PHP_VERSION#8}" != "$$PHP_VERSION" ]; then \
+          ln --symbolic /home/devilbox/.composer/vendor/bin/espo /usr/local/bin/espo; \
+        fi
+        ARG DOCKER_DAEMON_SH
+        ARG DOCKER_WEBSOCKET_SH
+        RUN set -ex; \
+          echo "$${DOCKER_DAEMON_SH}" > /usr/local/bin/docker-daemon.sh; \
+          echo "$${DOCKER_WEBSOCKET_SH}" > /usr/local/bin/docker-websocket.sh; \
+          chmod +x /usr/local/bin/docker-daemon.sh /usr/local/bin/docker-websocket.sh; \
+          ln --symbolic /opt/nvm/versions/node/*/bin/pnpm /usr/local/bin/pnpm;
 
-      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
-      - COMPOSER_MEMORY_LIMIT=-1
+  # ------------------------------------------------------------
+  # Daemon
+  # ------------------------------------------------------------
+  daemon:
+    <<: *php
+    container_name: daemon
+    entrypoint: docker-daemon.sh
+    user: devilbox:devilbox
+    depends_on: [php]
 
-    volumes:
-      - ${PWD}:/var/www/default:rw
-
-      # Users SSH directory (read-only)
-      - ${SSH_AUTH_SOCK_DIR:-/dev/null}:${SSH_AUTH_SOCK_DIR:-/dev/null}
-      - ${HOME}/.ssh:/home/devilbox/.ssh:ro
-
-      # Users .bash_history file
-      - ${HOME}/.bash_history:/home/devilbox/.bash_history:rw
-
-      # Mount devilbox user-defined PHP-FPM startup *.sh scripts
-      - ${PWD}/docker/cfg/php-startup-${PHP_SERVER:-8.1}:/startup.1.d:rw
-      - ${PWD}/docker/autostart:/startup.2.d:rw
+  # ------------------------------------------------------------
+  # PHP for HTTPD
+  # ------------------------------------------------------------
+  php-httpd:
+    container_name: php-httpd
+    <<: *php
+    build:
+      <<: *php-build
+      args:
+        <<: *php-build-args
+        PHP_VERSION: ${PHP_HTTPD_VERSION:-8.0-work}
 
   # ------------------------------------------------------------
   # Web Server
   # ------------------------------------------------------------
   httpd:
-    image: devilbox/apache-2.4:0.48
+    image: devilbox/apache-2.4:alpine
     container_name: httpd
-    restart: always
-    hostname: httpd
-
+    restart: unless-stopped
+    ports: ['8080:80']
+    volumes: [.:/var/www/default:ro]
+    depends_on: [php]
     environment:
-      - MAIN_VHOST_DOCROOT=site
-      - PHP_FPM_ENABLE=1
-      - PHP_FPM_SERVER_ADDR=php
-      - PHP_FPM_SERVER_PORT=9000
-      - PHP_FPM_TIMEOUT=180
-
-    volumes:
-      - $PWD:/var/www/default:rw
-
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.espocrm.rule=Host(`localhost`)
-      - traefik.http.routers.espocrm.entrypoints=http
+      NEW_UID: 1000
+      NEW_GID: 1000
+      MAIN_VHOST_ENABLE: 1
+      MAIN_VHOST_DOCROOT_DIR: site
+      PHP_FPM_ENABLE: 1
+      PHP_FPM_SERVER_ADDR: php-httpd
+      PHP_FPM_SERVER_PORT: 9000
+      PHP_FPM_TIMEOUT: 180
+      MAIN_VHOST_BACKEND: conf:phpfpm:tcp:php-httpd:9000
 
   # ------------------------------------------------------------
   # MySQL Database
   # ------------------------------------------------------------
   mysql:
-    image: devilbox/mysql:mariadb-10.5
+    image: mariadb:${MYSQL_VERSION:-10.11}
     container_name: mysql
-    hostname: mysql
-
-    ports:
-      - "3${HTTP_PORT:-8080}:3306"
-
+    restart: unless-stopped
+    ports: ['3306:3306']
+    volumes: [mysql:/var/lib/mysql:rw]
     environment:
-      - MYSQL_ROOT_PASSWORD
-      - MYSQL_ALLOW_EMPTY_PASSWORD=${MYSQL_ALLOW_EMPTY_PASSWORD:-yes}
-      - MYSQL_USER=${MYSQL_PASSWORD:-espocrm}
-      - MYSQL_DATABASE=${MYSQL_DATABASE:-espocrm}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-espocrm}
-
-    volumes:
-      - mysql:/var/lib/mysql:rw
-
-  # -----------------------------------------------------------------------------------------------
-  # Ngrok
-  # -----------------------------------------------------------------------------------------------
-  ngrok:
-    image: wernight/ngrok:latest
-    container_name: ngrok
-
-    environment:
-      - NGROK_PORT=httpd:80
-      - NGROK_REGION=${NGROK_REGION:-eu}
-      - NGROK_AUTH=${NGROK_AUTH:-}
-
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.ngrok.rule=Host(`ngrok.localhost`)
-      - traefik.http.routers.ngrok.entrypoints=http
-      - traefik.http.services.ngrok.loadbalancer.server.port=4040
-
-volumes:
-  mysql: null
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: '${MYSQL_ALLOW_EMPTY_PASSWORD:-yes}'
+      MYSQL_USER: '${MYSQL_PASSWORD:-espocrm}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE:-espocrm}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD:-espocrm}'
