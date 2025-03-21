@@ -3,20 +3,17 @@
     "name": "Dubas Dark Theme",
     "description": "More modern theme adjusted by dubas.pro. Paid support available through email contact@devcrm.it.",
     "author": "DUBAS S.C. - contact@dubas.pro",
+    "bundled": false,
     "authors": [
         "Arkadiy Asuratov",
         "Emil Dubielecki"
     ],
     "acceptableVersions": [
-        ">=7.2.0"
+        ">=9.0.0"
     ],
     "php": [
-        ">=7.4"
+        "~8.1.0 || ~8.2.0 || ~8.3.0"
     ],
     "releaseDate": "2022-09-16",
-    "checkVersionUrl": "https://devcrm.it",
-    "buildIgnorePathList": [
-        "client/custom/modules/dubas-dark-theme/node_modules",
-        "client/custom/modules/dubas-dark-theme/frontend"
-    ]
+    "checkVersionUrl": "https://api.dubas.pro"
 }

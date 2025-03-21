@@ -4,11 +4,10 @@
         "branch": "stable"
     },
     "database": {
-        "driver": "pdo_mysql",
-        "host": "mysql",
-        "port": "",
+        "host": "db",
+        "port": null,
         "charset": "utf8mb4",
-        "dbname": "ext-dubas-dark-theme",
+        "dbname": "espocrm",
         "user": "root",
         "password": ""
     },

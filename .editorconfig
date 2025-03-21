@@ -9,12 +9,16 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[{*.yml,*.yaml}]
+[{*.yml,*.yaml,*.neon}]
 indent_style = space
 indent_size = 2
 
 [NOTICE]
 insert_final_newline = false
 
-[*.txt]
+[{*.txt,*Dockerfile}]
 insert_final_newline = false
+
+[Makefile]
+indent_style = tab
+indent_size = 4

@@ -1,6 +1,37 @@
-<?php declare(strict_types=1);
+<?php
 
-$header = 'This file is part of the %s - EspoCRM extension.
+/**
+ * This file is part of the Dubas Dark Theme - EspoCRM extension.
+ *
+ * DUBAS S.C. - contact@dubas.pro
+ * Copyright (C) 2023-2025 Arkadiy Asuratov, Emil Dubielecki
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+declare(strict_types=1);
+
+use PHP_CodeSniffer\Standards\PSR2\Sniffs\Namespaces\UseDeclarationSniff;
+use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
+use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
+use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
+use PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocNoEmptyReturnFixer;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+$extension = json_decode(file_get_contents(__DIR__ . '/extension.json'));
+$header = 'This file is part of the Dubas Dark Theme - EspoCRM extension.
 
 %s
 Copyright (C) %s-%s %s
@@ -18,15 +49,19 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.';
 
-return static function (\Symplify\EasyCodingStandard\Config\ECSConfig $ecsConfig) use ($header): void {
-    $ecsConfig->paths([__DIR__ . '/src', __DIR__ . '/tests']);
+return ECSConfig::configure()
+    ->withPaths([
+        __DIR__ . '/src',
+    ])
+    ->withRootFiles()
 
-    $ecsConfig->skip([
-        \PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer::class,
-    ]);
+    ->withRules([
+        UseDeclarationSniff::class,
+        NoUnusedImportsFixer::class,
+        OrderedClassElementsFixer::class,
+    ])
 
-    $extension = json_decode(file_get_contents(__DIR__ . '/extension.json'));
-    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Comment\HeaderCommentFixer::class, [
+    ->withConfiguredRule(HeaderCommentFixer::class, [
         'header' => sprintf(
             $header,
             $extension->name,
@@ -35,27 +70,22 @@ return static function (\Symplify\EasyCodingStandard\Config\ECSConfig $ecsConfig
             date('Y'),
             implode(', ', $extension->authors)
         ),
-        'comment_type' => \PhpCsFixer\Fixer\Comment\HeaderCommentFixer::HEADER_PHPDOC,
+        'comment_type' => HeaderCommentFixer::HEADER_PHPDOC,
         'location' => 'after_open',
         'separate' => 'bottom',
-    ]);
+    ])
 
-    $ecsConfig->rules([
-        \PHP_CodeSniffer\Standards\PSR2\Sniffs\Namespaces\UseDeclarationSniff::class,
-        \PhpCsFixer\Fixer\Import\NoUnusedImportsFixer::class,
-        \PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class,
-    ]);
+    ->withPreparedSets(
+        arrays: true,
+        namespaces: true,
+        spaces: true,
+        docblocks: true,
+        comments: true,
+    )
 
-    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class, [
-        'tokens' => [
-            'use'
-        ]
-    ]);
+    ->withSkip([
+        NotOperatorWithSuccessorSpaceFixer::class,
+        PhpdocNoEmptyReturnFixer::class,
+    ])
 
-    $ecsConfig->sets([
-        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::SPACES,
-        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::ARRAY,
-        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::DOCBLOCK,
-        \Symplify\EasyCodingStandard\ValueObject\Set\SetList::PSR_12,
-    ]);
-};
+    ;
